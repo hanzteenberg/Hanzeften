@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanzeften | YEARBOOK EDITION</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .font-caveat {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+        }
+
+        /* Hexagon Pattern */
+        .hex-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.03' fill='%23ffffff'/%3E%3C/svg%3E");
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            overflow: visible;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        .glitch::before {
+            animation: glitch-1 0.3s infinite linear alternate-reverse;
+            color: #ff6b35;
+            z-index: -1;
+        }
+        .glitch::after {
+            animation: glitch-2 0.3s infinite linear alternate-reverse;
+            color: #00d4ff;
+            z-index: -2;
+        }
+
+        @keyframes glitch-1 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 2px); }
+            40% { clip-path: inset(40% 0 40% 0); transform: translate(2px, -2px); }
+            60% { clip-path: inset(60% 0 20% 0); transform: translate(-2px, 2px); }
+            80% { clip-path: inset(80% 0 0% 0); transform: translate(2px, -2px); }
+        }
+
+        @keyframes glitch-2 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(60% 0 20% 0); transform: translate(2px, -2px); }
+            40% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(20% 0 60% 0); transform: translate(2px, -2px); }
+            80% { clip-path: inset(0% 0 80% 0); transform: translate(-2px, 2px); }
+        }
+
+        /* Scanline Effect */
+        .scanlines::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Neon Glow */
+        .neon-orange {
+            text-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35, 0 0 40px #ff6b35;
+        }
+        .neon-cyan {
+            text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff;
+        }
+        .neon-box-orange {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5), inset 0 0 20px rgba(255, 107, 53, 0.1);
+        }
+        .neon-box-cyan {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        /* Diagonal Clip */
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        .clip-diagonal-reverse {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        /* Animated Border */
+        .animated-border {
+            position: relative;
+        }
+        .animated-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #ff6b35, #00d4ff, #ff6b35, #00d4ff);
+            background-size: 400% 400%;
+            animation: gradient-rotate 3s ease infinite;
+            z-index: -1;
+        }
+        @keyframes gradient-rotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.8), 0 0 60px rgba(255, 107, 53, 0.4); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Tech Lines */
+        .tech-line {
+            position: relative;
+            overflow: hidden;
+        }
+        .tech-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b35, transparent);
+            animation: tech-line-move 2s linear infinite;
+        }
+        @keyframes tech-line-move {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Rotating Border */
+        .rotate-border {
+            position: relative;
+        }
+        .rotate-border::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border: 2px solid transparent;
+            border-top-color: #ff6b35;
+            border-right-color: #00d4ff;
+            border-radius: 50%;
+            animation: rotate-border 4s linear infinite;
+        }
+        @keyframes rotate-border {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Section Reveal */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card Hover Effect */
+        .card-3d {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Progress Bar Animation */
+        .progress-fill {
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Typing Effect */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Particle Canvas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ff6b35;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease, background 0.2s ease;
+            mix-blend-mode: difference;
+        }
+        .custom-cursor.hover {
+            transform: scale(2);
+            background: rgba(255, 107, 53, 0.3);
+        }
+
+        /* Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background: #0a0a0a;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loading-bar {
+            width: 200px;
+            height: 2px;
+            background: #1a1a1a;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .loading-bar::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff6b35, #00d4ff);
+            animation: loading-progress 2s ease-out forwards;
+        }
+        @keyframes loading-progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* Skill Hexagon */
+        .skill-hex {
+            width: 100px;
+            height: 115px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .skill-hex:hover {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+            transform: scale(1.1);
+        }
+        .skill-hex::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: #0a0a0a;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        .skill-hex span {
+            position: relative;
+            z-index: 1;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.98);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* YEARBOOK 3D Book Styles - ENHANCED */
+        .book-scene {
+            perspective: 1500px;
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .book {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(10deg);
+            transition: transform 0.5s ease;
+        }
+
+        /* Book Spine - Left side */
+        .book__spine {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                #8B4513 0%, 
+                #A0522D 30%,
+                #8B4513 100%);
+            transform: rotateY(-90deg) translateZ(30px);
+            transform-origin: left;
+            z-index: 1;
+            border-radius: 4px 0 0 4px;
+            box-shadow: inset -5px 0 10px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book__spine-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            white-space: nowrap;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: #FFD700;
+            letter-spacing: 3px;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Book Cover - Front (The part that opens) */
+        .book__cover {
+            position: absolute;
+            width: 450px;
+            height: 100%;
+            left: 30px;
+            transform-style: preserve-3d;
+            transform-origin: left center;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .book__cover-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: linear-gradient(135deg, #2C1810 0%, #1a0f0a 100%);
+            border: 3px solid #D2691E;
+            border-radius: 4px 15px 15px 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            box-shadow: 
+                0 0 30px rgba(210, 105, 30, 0.3),
+                inset 0 0 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        /* Yearbook Cover Design */
+        .book__cover-front::before {
+            content: '';
+            position: absolute;
+            inset: 15px;
+            border: 2px solid #D2691E;
+            border-radius: 8px;
+            opacity: 0.6;
+        }
+
+        .book__cover-front::after {
+            content: '';
+            position: absolute;
+            inset: 25px;
+            border: 1px solid #FFD700;
+            border-radius: 4px;
+            opacity: 0.4;
+        }
+
+        .yearbook-badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #2C1810;
+            padding: 8px 16px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            transform: rotate(15deg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .book__cover-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 15px 4px 4px 15px;
+            border: 1px solid #ccc;
+        }
+
+        /* When book is open, rotate the cover */
+        .book.open .book__cover {
+            transform: rotateY(-180deg);
+        }
+
+        /* Pages thickness effect */
+        .book__pages {
+            position: absolute;
+            left: 30px;
+            top: 2%;
+            width: 440px;
+            height: 96%;
+            background: #f8f8f8;
+            border-radius: 2px 10px 10px 2px;
+            box-shadow: 
+                inset 30px 0 50px rgba(0,0,0,0.1),
+                5px 5px 15px rgba(0,0,0,0.3);
+            transform: translateZ(-5px);
+        }
+
+        .book__pages::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(90deg, 
+                rgba(0,0,0,0.1) 0%,
+                rgba(0,0,0,0.05) 50%,
+                transparent 100%);
+        }
+
+        /* Content container - Shows when book is open */
+        .book__content {
+            position: absolute;
+            left: 30px;
+            top: 0;
+            width: 450px;
+            height: 100%;
+            background: #fafafa;
+            border-radius: 0 4px 4px 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.05);
+        }
+
+        .book.open .book__content {
+            opacity: 1;
+            transition-delay: 0.3s;
+        }
+
+        /* Left and Right pages inside the book */
+        .book__page {
+            flex: 1;
+            padding: 25px 20px;
+            overflow-y: auto;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .book__page--left {
+            border-right: 2px solid #e0e0e0;
+            background: linear-gradient(to right, #f5f5f5, #fafafa);
+        }
+
+        .book__page--right {
+            background: linear-gradient(to left, #f5f5f5, #fafafa);
+        }
+
+        .book__page::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .book__page::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+        }
+
+        /* Yearbook Memory Card */
+        .memory-card {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .memory-photo {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .memory-year {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #ff8c5a);
+            color: white;
+            padding: 3px 10px;
+            font-size: 11px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-bottom: 6px;
+            box-shadow: 0 2px 5px rgba(255, 107, 53, 0.3);
+        }
+
+        .memory-title {
+            color: #2a2a2a;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .memory-desc {
+            color: #666;
+            font-size: 11px;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .memory-quote {
+            color: #888;
+            font-size: 10px;
+            line-height: 1.4;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px dashed #ddd;
+            font-family: 'Caveat', cursive;
+            font-size: 14px;
+        }
+
+        /* Glow effect */
+        .book__glow {
+            position: absolute;
+            left: 0;
+            top: -20px;
+            width: 510px;
+            height: calc(100% + 40px);
+            background: radial-gradient(circle at center, rgba(210, 105, 30, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: -1;
+            transform: translateZ(-50px);
+        }
+
+        .book:hover .book__glow {
+            opacity: 1;
+        }
+
+        .book__click-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #FFD700;
+            opacity: 0.8;
+            animation: pulse 2s infinite;
+            pointer-events: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+            50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .page-number--left {
+            right: 25px;
+        }
+
+        .page-number--right {
+            left: 25px;
+        }
+
+        /* Yearbook Cover Elements */
+        .cover-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #FFD700;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .cover-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #FFD700;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .cover-subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+            color: #D2691E;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cover-year {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: rgba(255, 215, 0, 0.2);
+            position: absolute;
+            bottom: 80px;
+            letter-spacing: 10px;
+        }
+
+        /* Polaroid Style for some memories */
+        .polaroid {
+            background: white;
+            padding: 8px 8px 25px 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 10;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            filter: sepia(20%);
+        }
+
+        .polaroid-caption {
+            text-align: center;
+            font-family: 'Caveat', cursive;
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .clip-diagonal, .clip-diagonal-reverse {
+                clip-path: none;
+            }
+            
+            .book-scene {
+                height: 450px;
+                max-width: 350px;
+            }
+            
+            .book__cover,
+            .book__content,
+            .book__pages {
+                width: 280px;
+                left: 35px;
+            }
+            
+            .book__spine {
+                width: 40px;
+            }
+
+            .memory-photo {
+                height: 80px;
+            }
+
+            .cover-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cover-title {
+                font-size: 20px;
+            }
+
+            .cover-year {
+                font-size: 32px;
+            }
+        }
+
+        /* Photo Grid in Yearbook */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Best Friends Section */
+        .best-friends {
+            background: linear-gradient(135deg, #fff9e6, #fff);
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .best-friends h4 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff6b35;
+            font-size: 12px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .friend-avatars {
+            display: flex;
+            justify-content: center;
+            gap: -10px;
+            margin-bottom: 10px;
+        }
+
+        .friend-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-left: -10px;
+            transition: all 0.3s ease;
+        }
+
+        .friend-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .friend-avatar:hover {
+            transform: translateY(-5px) scale(1.2);
+            z-index: 10;
+        }
+
+        .friend-quote {
+            text-align: center;
+            font-family: 'Caveat', cursive;
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="hex-pattern">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="font-orbitron text-2xl tracking-widest glitch" data-text="INITIALIZING">INITIALIZING</div>
+        <div class="loading-bar"></div>
+        <div class="mt-4 text-xs text-gray-500 font-mono">HANZEFTEN LOADING...</div>
+    </div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="w-full px-6 lg:px-12 py-4 flex items-center justify-between backdrop-blur-md bg-black/50">
+            <a href="#hero" class="font-orbitron text-xl font-bold tracking-wider text-white hover:text-[#ff6b35] transition-colors">
+                HANZEFTEN<span class="text-[#ff6b35]">.ID</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm tracking-widest hover:text-[#ff6b35] transition-colors tech-line pb-1">ABOUT</a>
+                <a href="#skills" class="text-sm tracking-widest hover:text-[#ff6b35] transition-colors tech-line pb-1">SKILLS</a>
+                <a href="#projects" class="text-sm tracking-widest hover:text-[#ff6b35] transition-colors tech-line pb-1">PROJECTS</a>
+                <a href="#yearbook" class="text-sm tracking-widest hover:text-[#ff6b35] transition-colors tech-line pb-1">YEARBOOK</a>
+                <a href="#contact" class="px-6 py-2 border border-[#ff6b35] text-[#ff6b35] text-sm tracking-widest hover:bg-[#ff6b35] hover:text-white transition-all clip-diagonal">CONTACT</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden flex flex-col gap-1.5 p-2" id="mobileMenuBtn">
+                <span class="w-6 h-0.5 bg-white transition-all"></span>
+                <span class="w-6 h-0.5 bg-white transition-all"></span>
+                <span class="w-4 h-0.5 bg-white transition-all"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="absolute top-6 right-6 text-white" id="closeMobileMenu">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="flex flex-col items-center gap-8">
+            <a href="#about" class="font-orbitron text-2xl tracking-widest hover:text-[#ff6b35] transition-colors mobile-link">ABOUT</a>
+            <a href="#skills" class="font-orbitron text-2xl tracking-widest hover:text-[#ff6b35] transition-colors mobile-link">SKILLS</a>
+            <a href="#projects" class="font-orbitron text-2xl tracking-widest hover:text-[#ff6b35] transition-colors mobile-link">PROJECTS</a>
+            <a href="#yearbook" class="font-orbitron text-2xl tracking-widest hover:text-[#ff6b35] transition-colors mobile-link">YEARBOOK</a>
+            <a href="#contact" class="font-orbitron text-2xl tracking-widest hover:text-[#ff6b35] transition-colors mobile-link">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 right-10 w-96 h-96 bg-[#ff6b35]/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-10 w-72 h-72 bg-[#00d4ff]/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-[#ff6b35]/20 rounded-full"></div>
+        </div>
+
+        <div class="relative z-10 w-full px-6 lg:px-12 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="order-2 lg:order-1">
+                    <div class="mb-6">
+                        <span class="text-[#ff6b35] text-sm tracking-[0.3em] font-medium">WELCOME TO MY WORLD</span>
+                    </div>
+                    <h1 class="font-orbitron text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-[1.1]">
+                        <span class="block glitch" data-text="CREATIVE">CREATIVE</span>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-[#ff6b35] to-[#00d4ff] glitch" data-text="DEVELOPER">DEVELOPER</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg mb-8 max-w-lg typing-cursor" id="heroText">
+                        Crafting digital experiences that push boundaries and redefine possibilities.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="group relative px-8 py-4 bg-[#ff6b35] text-white font-bold tracking-wider overflow-hidden clip-diagonal hover:shadow-lg hover:shadow-[#ff6b35]/50 transition-all">
+                            <span class="relative z-10">VIEW PROJECTS</span>
+                            <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+                        </a>
+                        <a href="#yearbook" class="group relative px-8 py-4 border-2 border-[#FFD700] text-[#FFD700] font-bold tracking-wider overflow-hidden clip-diagonal-reverse hover:bg-[#FFD700] hover:text-black transition-all">
+                            <span class="relative z-10">OPEN YEARBOOK</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-white/10">
+                        <div>
+                            <div class="font-orbitron text-3xl font-bold text-[#ff6b35]">3+</div>
+                            <div class="text-xs text-gray-500 tracking-wider mt-1">YEARS EXP</div>
+                        </div>
+                        <div>
+                            <div class="font-orbitron text-3xl font-bold text-[#00d4ff]">69+</div>
+                            <div class="text-xs text-gray-500 tracking-wider mt-1">PROJECTS</div>
+                        </div>
+                        <div>
+                            <div class="font-orbitron text-3xl font-bold text-white">1</div>
+                            <div class="text-xs text-gray-500 tracking-wider mt-1">CLIENTS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Profile Image -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <!-- Rotating Border -->
+                        <div class="rotate-border w-80 h-80 md:w-96 md:h-96 rounded-full">
+                            <div class="absolute inset-4 rounded-full overflow-hidden animated-border">
+                                <!-- Placeholder for user photo - replace with actual image -->
+                                <div class="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center">
+                                    <div class="text-center">
+                                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#ff6b35] to-[#00d4ff] flex items-center justify-center float-animation">
+                                            <img src="o.jpg" class="w-32 h-32 rounded-full object-cover" alt="Profile">
+                                        </div>
+                                        <p class="text-sm text-gray-400">Hanzteen / Haeften</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-[#ff6b35]/20 rounded-lg backdrop-blur-sm border border-[#ff6b35]/30 flex items-center justify-center float-animation" style="animation-delay: 0.5s;">
+                            <span class="font-orbitron text-2xl font-bold text-[#ff6b35]">JS</span>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-[#00d4ff]/20 rounded-lg backdrop-blur-sm border border-[#00d4ff]/30 flex items-center justify-center float-animation" style="animation-delay: 1s;">
+                            <span class="font-orbitron text-2xl font-bold text-[#00d4ff]">UI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span class="text-xs tracking-widest text-gray-500">SCROLL</span>
+            <div class="w-px h-12 bg-gradient-to-b from-[#ff6b35] to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-32 overflow-hidden">
+        <div class="w-full px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left - Image -->
+                <div class="reveal-section">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-[#ff6b35] to-[#00d4ff] opacity-20 blur-xl"></div>
+                        <div class="relative bg-[#1a1a1a] p-2 clip-diagonal">
+                            <!-- Placeholder for about image -->
+                            <div class="aspect-[4/5] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center overflow-hidden">
+                                <img src="o1.jpg" class="w-full h-full object-cover" alt="About">
+                            </div>
+                        </div>
+                        <!-- Decorative Elements -->
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 border-r-2 border-b-2 border-[#ff6b35]"></div>
+                        <div class="absolute -top-6 -left-6 w-32 h-32 border-l-2 border-t-2 border-[#00d4ff]"></div>
+                    </div>
+                </div>
+
+                <!-- Right - Content -->
+                <div class="reveal-section">
+                    <span class="text-[#ff6b35] text-sm tracking-[0.3em] font-medium">WHO I AM</span>
+                    <h2 class="font-orbitron text-4xl md:text-5xl font-bold mt-4 mb-6">
+                        ABOUT <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]">ME</span>
+                    </h2>
+                    <div class="space-y-4 text-gray-400 leading-relaxed">
+                        <p>
+                            Saya adalah seorang developer kreatif dengan passion dalam menciptakan pengalaman digital yang memukau. Dengan kombinasi skill teknis yang kuat dan sense of design yang tajam, saya menghadirkan solusi yang tidak hanya fungsional tetapi juga estetis.
+                        </p>
+                        <p>
+                            Berpengalaman dalam berbagai teknologi modern, saya selalu berusaha untuk tetap update dengan perkembangan terbaru di dunia tech. Setiap proyek adalah kesempatan untuk belajar dan berinovasi.
+                        </p>
+                        <p>
+                            Ketika tidak coding, saya menikmati eksplorasi teknologi baru, fotografi, dan traveling untuk mencari inspirasi.
+                        </p>
+                    </div>
+                    
+                    <!-- Personal Info -->
+                    <div class="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-white/10">
+                        <div>
+                            <span class="text-xs text-gray-500 tracking-wider">NAME</span>
+                            <p class="text-white font-medium">Hanzteen / Haeften</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 tracking-wider">EMAIL</span>
+                            <p class="text-white font-medium">hanzteenhaeften@email.com</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 tracking-wider">LOCATION</span>
+                            <p class="text-white font-medium">Kudus, Indonesia</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 tracking-wider">AVAILABILITY</span>
+                            <p class="text-[#00d4ff] font-medium">Open to Work</p>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="inline-flex items-center gap-2 mt-8 text-[#ff6b35] hover:gap-4 transition-all">
+                        <span class="font-medium tracking-wider">LET'S TALK</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#ff6b35]/5 to-transparent"></div>
+        
+        <div class="relative w-full px-6 lg:px-12">
+            <div class="text-center mb-16 reveal-section">
+                <span class="text-[#00d4ff] text-sm tracking-[0.3em] font-medium">MY EXPERTISE</span>
+                <h2 class="font-orbitron text-4xl md:text-5xl font-bold mt-4">
+                    SKILLS & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]">TECHNOLOGIES</span>
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Skill Bars -->
+                <div class="space-y-6 reveal-section">
+                    <h3 class="font-orbitron text-xl font-bold mb-8 flex items-center gap-3">
+                        <span class="w-8 h-px bg-[#ff6b35]"></span>
+                        TECHNICAL SKILLS
+                    </h3>
+                    
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm tracking-wider">JavaScript / TypeScript</span>
+                            <span class="text-[#ff6b35] font-orbitron">95%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 overflow-hidden">
+                            <div class="progress-fill h-full bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]" data-width="95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm tracking-wider">React / Next.js</span>
+                            <span class="text-[#ff6b35] font-orbitron">67%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 overflow-hidden">
+                            <div class="progress-fill h-full bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]" data-width="67%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm tracking-wider">Node.js / Express</span>
+                            <span class="text-[#ff6b35] font-orbitron">69%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 overflow-hidden">
+                            <div class="progress-fill h-full bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]" data-width="69%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm tracking-wider">HTML5 / CSS3 </span>
+                            <span class="text-[#ff6b35] font-orbitron">98%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 overflow-hidden">
+                            <div class="progress-fill h-full bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]" data-width="98%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm tracking-wider">UI/UX Design</span>
+                            <span class="text-[#ff6b35] font-orbitron">99%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 overflow-hidden">
+                            <div class="progress-fill h-full bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]" data-width="99%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Hexagons -->
+                <div class="reveal-section">
+                    <h3 class="font-orbitron text-xl font-bold mb-8 flex items-center gap-3">
+                        <span class="w-8 h-px bg-[#00d4ff]"></span>
+                        TECH STACK
+                    </h3>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <div class="skill-hex">
+                            <span class="text-[#ff6b35]">REACT</span>
+                        </div>
+                        <div class="skill-hex">
+                            <span class="text-[#00d4ff]">VUE</span>
+                        </div>
+                        <div class="skill-hex">
+                            <span class="text-white">HTML5</span>
+                        </div>
+                        <div class="skill-hex">
+                            <span class="text-[#ff6b35]">PYTHON</span>
+                        </div>
+                        <div class="skill-hex">
+                            <span class="text-[#00d4ff]">FIGMA</span>
+                        </div>
+                        <div class="skill-hex">
+                            <span class="text-white">CSS3</span>
+                        </div>
+                        <div class="skill-hex">
+                            <span class="text-[#ff6b35]">TAILWIND</span>
+                        </div>
+                        <div class="skill-hex">
+                            <span class="text-[#00d4ff]">NEXT</span>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="mt-12 p-6 bg-white/5 border border-white/10 clip-diagonal">
+                        <h4 class="font-orbitron font-bold mb-4 text-[#ff6b35]">CURRENT FOCUS</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-[#00d4ff] rounded-full"></span>
+                                Advanced React Patterns & Performance
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-[#00d4ff] rounded-full"></span>
+                                WebGL & 3D Web Experiences
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-[#00d4ff] rounded-full"></span>
+                                AI Integration in Web Apps
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-[#00d4ff] rounded-full"></span>
+                                Microservices Architecture
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-32 overflow-hidden">
+        <div class="w-full px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 reveal-section">
+                <div>
+                    <span class="text-[#ff6b35] text-sm tracking-[0.3em] font-medium">PORTFOLIO</span>
+                    <h2 class="font-orbitron text-4xl md:text-5xl font-bold mt-4">
+                        FEATURED <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]">PROJECTS</span>
+                    </h2>
+                </div>
+                <a href="#" class="mt-6 md:mt-0 text-sm tracking-wider text-gray-400 hover:text-[#ff6b35] transition-colors flex items-center gap-2">
+                    VIEW ALL PROJECTS
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group reveal-section card-3d">
+                    <div class="relative overflow-hidden bg-[#1a1a1a] border border-white/10 hover:border-[#ff6b35]/50 transition-all">
+                        <div class="aspect-video bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                            <img src="mt.jpg" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Project 1">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-[#ff6b35] text-xs tracking-wider">GAME WEB</span>
+                                <h3 class="font-orbitron text-xl font-bold mt-1">Website Game Memory Test</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-[#0f0f0f] border-x border-b border-white/10">
+                        <p class="text-gray-400 text-sm mb-4">Game Memory Test Tanpa Framework.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">HTML5</span>
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">CSS3</span>
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">JavaScript</span>
+                            <a href="mt.html" class="px-6 py-2 border border-[#ff6b35] text-[#ff6b35] text-sm tracking-widest hover:bg-[#ff6b35] hover:text-white transition-all clip-diagonal">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group reveal-section card-3d" style="transition-delay: 0.1s;">
+                    <div class="relative overflow-hidden bg-[#1a1a1a] border border-white/10 hover:border-[#00d4ff]/50 transition-all">
+                        <div class="aspect-video bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                            <img src="tet.jpg" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Project 2">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-[#00d4ff] text-xs tracking-wider">GAME WEB</span>
+                                <h3 class="font-orbitron text-xl font-bold mt-1">Tetris</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-[#0f0f0f] border-x border-b border-white/10">
+                        <p class="text-gray-400 text-sm mb-4">Game Tetris Classic.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">HTML5</span>
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">CSS3</span>
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">JavaScript</span>
+                            <a href="tetris.html" class="px-6 py-2 border border-[#ff6b35] text-[#ff6b35] text-sm tracking-widest hover:bg-[#ff6b35] hover:text-white transition-all clip-diagonal">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group reveal-section card-3d" style="transition-delay: 0.2s;">
+                    <div class="relative overflow-hidden bg-[#1a1a1a] border border-white/10 hover:border-[#ff6b35]/50 transition-all">
+                        <div class="aspect-video bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                            <img src="hba.jpg" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Project 3">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-[#ff6b35] text-xs tracking-wider">GAME WEB</span>
+                                <h3 class="font-orbitron text-xl font-bold mt-1">Lucky Game</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-[#0f0f0f] border-x border-b border-white/10">
+                        <p class="text-gray-400 text-sm mb-4">Ludo game.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">HTML5</span>
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">CSS3</span>
+                            <span class="px-3 py-1 text-xs bg-white/5 text-gray-400">JavaScript</span>
+                            <a href="hba.html" class="px-6 py-2 border border-[#ff6b35] text-[#ff6b35] text-sm tracking-widest hover:bg-[#ff6b35] hover:text-white transition-all clip-diagonal">Play</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yearbook Section - 3D Memory Book -->
+    <section id="yearbook" class="relative py-32 overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#1a0f0a] to-[#0a0a0a]">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,107,53,0.1) 35px, rgba(255,107,53,0.1) 70px);"></div>
+        </div>
+        
+        <div class="relative w-full px-6 lg:px-12">
+            <div class="text-center mb-16 reveal-section">
+                <span class="text-[#FFD700] text-sm tracking-[0.3em] font-medium">MEMORIES</span>
+                <h2 class="font-orbitron text-4xl md:text-5xl font-bold mt-4">
+                    MY <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#ff6b35]">YEARBOOK</span>
+                </h2>
+                <p class="text-gray-400 mt-4 text-sm">Click the book to open my journey through the years</p>
+            </div>
+
+            <div class="book-scene reveal-section">
+                <div class="book" id="yearbookBook">
+                    <!-- Glow Effect -->
+                    <div class="book__glow"></div>
+                    
+                    <!-- Book Spine (Left side) -->
+                    <div class="book__spine">
+                        <span class="book__spine-text">MEMORIES 2023-2026</span>
+                    </div>
+                    
+                    <!-- Pages Stack (Thickness) -->
+                    <div class="book__pages"></div>
+                    
+                    <!-- Book Content (Inside pages) - Shows when opened -->
+                    <div class="book__content">
+                        <!-- Left Page - Early Years -->
+                        <div class="book__page book__page--left">
+                            <h3 class="font-orbitron text-lg font-bold text-[#2a2a2a] mb-4 border-b-2 border-[#ff6b35] pb-2 flex items-center gap-2">
+                                <span class="text-2xl">📸</span> 2026
+                            </h3>
+                            
+                            <!-- Memory 2018 -->
+                            <div class="memory-card">
+                                <span class="memory-year">January</span>
+                                <img src="jan.jpg" class="memory-photo" alt="Graduation">
+                                <h4 class="memory-title">First Month</h4>
+                                <p class="memory-desc">Baru awal tahun langsung di blokir seseorang</p>
+                                <p class="memory-quote">"Please changed my world forever"</p>
+                            </div>
+
+                            <!-- Memory 2019 -->
+                            <div class="memory-card">
+                                <span class="memory-year">Present</span>
+                                <div class="photo-grid">
+                                    <img src="jan1.jpg" alt="Hackathon">
+                                    <img src="jan2.jpg" alt="Coding">
+                                </div>
+                                <h4 class="memory-title">HANZEFTEN ARC</h4>
+                                <p class="memory-desc">Sudah menerima kenyataan kalo selalu kalah dari orang lain</p>
+                                <p class="memory-quote">"Zero or One."</p>
+                            </div>
+
+                            <!-- Best Friends -->
+                            <div class="best-friends">
+                                <h4> ITS Me</h4>
+                                <div class="friend-avatars">
+                                    <img src="me1.jpg" class="friend-avatar" alt="Friend 1">
+                                    <img src="me2.jpg" class="friend-avatar" alt="Friend 2">
+                                    <img src="me3.jpg" class="friend-avatar" alt="Friend 3">
+                                    <img src="me4.jpg" class="friend-avatar" alt="Friend 4">
+                                </div>
+                                <p class="friend-quote">"Want become great."</p>
+                            </div>
+
+                            <span class="page-number page-number--left">04</span>
+                        </div>
+
+                        <!-- Right Page - Recent Years -->
+                        <div class="book__page book__page--right">
+                            <h3 class="font-orbitron text-lg font-bold text-[#2a2a2a] mb-4 border-b-2 border-[#00d4ff] pb-2 flex items-center gap-2">
+                                <span class="text-2xl"></span> NEXTERA
+                            </h3>
+                            
+                            <!-- Memory 2022 -->
+                            <div class="memory-card">
+                                <span class="memory-year">2023</span>
+                                <img src="2023.jpg" class="memory-photo" alt="Team">
+                                <h4 class="memory-title">First Year in Coding</h4>
+                                <p class="memory-desc">Tahun pertama gw ngoding, dulu websitenya kayak browser blackbery jir</p>
+                                <p class="memory-quote">"Avoid or Undertakeit"</p>
+                            </div>
+
+                            <!-- Memory 2023 -->
+                            <div class="memory-card polaroid">
+                                <span class="memory-year">2024</span>
+                                <img src="2024.jpg" class="memory-photo" alt="Conference" style="filter: sepia(30%);">
+                                <div class="polaroid-caption">Changer</div>
+                                <p class="memory-desc">Perubahan dalam kehidupanku</p>
+                                <p class="memory-quote">"What happens to me?"</p>
+                            </div>
+
+                            <!-- Memory 2024 -->
+                            <div class="memory-card">
+                                <span class="memory-year">2025</span>
+                                <div class="photo-grid">
+                                    <img src="20251.jpg" alt="Workspace">
+                                    <img src="20252.jpg" alt="Meeting">
+                                </div>
+                                <h4 class="memory-title">100% TEARS</h4>
+                                <p class="memory-desc">Tahun tersedih gw</p>
+                                <p class="memory-quote">"Don't lie to yourself"</p>
+                            </div>
+
+                            <!-- 2025 Highlight -->
+                            <div class="mt-4 p-4 bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] rounded-lg text-white">
+                                <p class="text-xs font-orbitron tracking-wider mb-1">CURRENTLY</p>
+                                <p class="font-bold text-lg">2023 - Present</p>
+                                <p class="text-sm mt-1 opacity-90">Front-End Developer</p>
+                            </div>
+
+                            <span class="page-number page-number--right">05</span>
+                        </div>
+                    </div>
+
+                    <!-- Book Cover (Front) - This rotates open -->
+                    <div class="book__cover" id="bookCover">
+                        <div class="book__cover-front">
+                            <div class="yearbook-badge">JOURNAL</div>
+                            
+                            <img src="o.jpg" class="cover-photo" alt="Yearbook Photo">
+                            
+                            <h3 class="cover-title">YEARBOOK</h3>
+                            <p class="cover-subtitle">Journey of a Developer</p>
+                            
+                            <div class="w-24 h-1 bg-gradient-to-r from-[#FFD700] to-[#ff6b35] mx-auto mb-4 rounded-full"></div>
+                            
+                            <p class="text-[10px] text-[#D2691E] tracking-[0.3em] uppercase">Hanzeften Edition</p>
+                            
+                            <div class="cover-year">2026</div>
+                            
+                            <div class="book__click-hint">CLICK TO OPEN</div>
+                        </div>
+                        <!-- Inside of cover (what you see when opened) -->
+                        <div class="book__cover-back"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yearbook Navigation Hint -->
+            <div class="text-center mt-8 text-gray-500 text-sm reveal-section">
+                <p>My book</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-32 overflow-hidden">
+        <div class="w-full px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Left - Info -->
+                <div class="reveal-section">
+                    <span class="text-[#00d4ff] text-sm tracking-[0.3em] font-medium">GET IN TOUCH</span>
+                    <h2 class="font-orbitron text-4xl md:text-5xl font-bold mt-4 mb-6">
+                        LET'S <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6b35] to-[#00d4ff]">CONNECT</span>
+                    </h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Ready to build something great? CONTACT ME.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#ff6b35]/10 border border-[#ff6b35]/30 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-[#ff6b35]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 tracking-wider block">EMAIL</span>
+                                <span class="text-white">hanzteenhaeften@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#00d4ff]/10 border border-[#00d4ff]/30 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-[#00d4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 tracking-wider block">LOCATION</span>
+                                <span class="text-white">Kudus, Indonesia.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-12">
+                        <span class="text-xs text-gray-500 tracking-wider block mb-4">FOLLOW ME</span>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#ff6b35] hover:border-[#ff6b35] transition-all group">
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#ff6b35] hover:border-[#ff6b35] transition-all group">
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#00d4ff] hover:border-[#00d4ff] transition-all group">
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#00d4ff] hover:border-[#00d4ff] transition-all group">
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Form -->
+                <div class="reveal-section">
+                    <form class="space-y-6" id="contactForm">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="text-xs text-gray-500 tracking-wider block mb-2">NAME</label>
+                                <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-[#ff6b35] focus:outline-none transition-colors" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="text-xs text-gray-500 tracking-wider block mb-2">EMAIL</label>
+                                <input type="email" class="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-[#ff6b35] focus:outline-none transition-colors" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-500 tracking-wider block mb-2">SUBJECT</label>
+                            <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-[#ff6b35] focus:outline-none transition-colors" placeholder="Project Inquiry">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-500 tracking-wider block mb-2">MESSAGE</label>
+                            <textarea rows="5" class="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-[#ff6b35] focus:outline-none transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="group relative w-full py-4 bg-[#ff6b35] text-white font-bold tracking-wider overflow-hidden clip-diagonal hover:shadow-lg hover:shadow-[#ff6b35]/50 transition-all">
+                            <span class="relative z-10 flex items-center justify-center gap-2">
+                                SEND MESSAGE
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                            <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12 border-t border-white/10">
+        <div class="w-full px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="font-orbitron text-xl font-bold tracking-wider">
+                    HANZEFTEN<span class="text-[#ff6b35]">.ID</span>
+                </div>
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 All Rights Reserved. Designed with passion.
+                </p>
+                <div class="flex items-center gap-2 text-xs text-gray-500">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    SYSTEM ONLINE
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 2000);
+        });
+
+        // Custom Cursor
+        const cursor = document.getElementById('customCursor');
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+        if (!isTouchDevice && cursor) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+            });
+
+            document.querySelectorAll('a, button, .skill-hex, .card-3d, .book__cover, .memory-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        } else if (cursor) {
+            cursor.style.display = 'none';
+        }
+
+        // Particle System
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationId;
+        let isActive = true;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.color = Math.random() > 0.5 ? '#ff6b35' : '#00d4ff';
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = isTouchDevice ? 15 : 30;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function connectParticles() {
+            const maxDistance = 100;
+            const maxConnections = 3;
+
+            for (let i = 0; i < particles.length; i++) {
+                let connections = 0;
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance && connections < maxConnections) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = particles[i].color;
+                        ctx.globalAlpha = (1 - distance / maxDistance) * 0.2;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                        connections++;
+                    }
+                }
+            }
+        }
+
+        let frameCount = 0;
+        function animateParticles() {
+            if (!isActive) return;
+            
+            frameCount++;
+            if (frameCount % 2 === 0) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                connectParticles();
+            }
+            
+            animationId = requestAnimationFrame(animateParticles);
+        }
+
+        // Initialize particles
+        resizeCanvas();
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+
+        // Pause animation when tab is hidden
+        document.addEventListener('visibilitychange', () => {
+            isActive = document.visibilityState === 'visible';
+            if (isActive) {
+                animateParticles();
+            } else {
+                cancelAnimationFrame(animationId);
+            }
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal-section');
+        const progressBars = document.querySelectorAll('.progress-fill');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    
+                    // Animate progress bars
+                    if (entry.target.querySelector('.progress-fill')) {
+                        entry.target.querySelectorAll('.progress-fill').forEach(bar => {
+                            bar.style.width = bar.dataset.width;
+                        });
+                    }
+                    
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('bg-black/90');
+            } else {
+                navbar.classList.remove('bg-black/90');
+            }
+            
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact Form
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="relative z-10">MESSAGE SENT!</span>';
+            btn.classList.add('bg-green-500');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-green-500');
+                contactForm.reset();
+            }, 3000);
+        });
+
+        // Typing Effect for Hero
+        const heroText = document.getElementById('heroText');
+        const text = heroText.textContent;
+        heroText.textContent = '';
+        heroText.classList.remove('typing-cursor');
+        
+        let charIndex = 0;
+        function typeText() {
+            if (charIndex < text.length) {
+                heroText.textContent += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 30);
+            } else {
+                heroText.classList.add('typing-cursor');
+            }
+        }
+        
+        setTimeout(typeText, 2500);
+
+        // Glitch Effect on Hover for Title
+        const glitchElements = document.querySelectorAll('.glitch');
+        glitchElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.animation = 'none';
+                setTimeout(() => {
+                    el.style.animation = '';
+                }, 10);
+            });
+        });
+
+        // Parallax Effect for Hero Background
+        const heroSection = document.getElementById('hero');
+        const heroBgElements = heroSection.querySelectorAll('.absolute');
+
+        if (!isTouchDevice) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const { clientX, clientY } = e;
+                const { innerWidth, innerHeight } = window;
+                
+                const xPos = (clientX / innerWidth - 0.5) * 20;
+                const yPos = (clientY / innerHeight - 0.5) * 20;
+                
+                heroBgElements.forEach((el, index) => {
+                    const speed = (index + 1) * 0.5;
+                    el.style.transform = `translate(${xPos * speed}px, ${yPos * speed}px)`;
+                });
+            });
+        }
+
+        // 3D Yearbook Interaction
+        const yearbookBook = document.getElementById('yearbookBook');
+        const yearbookCover = document.getElementById('bookCover');
+        let isYearbookOpen = false;
+
+        // Toggle book open/close when clicking the cover
+        yearbookCover.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isYearbookOpen = !isYearbookOpen;
+            
+            if (isYearbookOpen) {
+                yearbookBook.classList.add('open');
+                yearbookCover.style.transform = 'rotateY(-180deg)';
+            } else {
+                yearbookBook.classList.remove('open');
+                yearbookCover.style.transform = 'rotateY(0deg)';
+            }
+        });
+
+        // Also allow clicking anywhere on the book to toggle (except content pages)
+        yearbookBook.addEventListener('click', (e) => {
+            // Don't toggle if clicking inside the content pages
+            if (e.target.closest('.book__page')) return;
+            
+            isYearbookOpen = !isYearbookOpen;
+            
+            if (isYearbookOpen) {
+                yearbookBook.classList.add('open');
+                yearbookCover.style.transform = 'rotateY(-180deg)';
+            } else {
+                yearbookBook.classList.remove('open');
+                yearbookCover.style.transform = 'rotateY(0deg)';
+            }
+        });
+
+        // Add hover tilt effect for book when closed
+        if (!isTouchDevice) {
+            const bookScene = document.querySelector('.book-scene');
+            
+            bookScene.addEventListener('mousemove', (e) => {
+                if (isYearbookOpen) {
+                    // Reset transform when open
+                    yearbookBook.style.transform = 'rotateX(10deg)';
+                    return;
+                }
+                
+                const rect = bookScene.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / 20) + 10; // Base 10deg + mouse influence
+                const rotateY = (centerX - x) / 20;
+                
+                yearbookBook.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            
+            bookScene.addEventListener('mouseleave', () => {
+                yearbookBook.style.transform = 'rotateX(10deg) rotateY(0deg)';
+            });
+        }
+    </script>
+</body>
+</html>
